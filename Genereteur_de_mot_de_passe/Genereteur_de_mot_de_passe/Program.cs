@@ -7,17 +7,24 @@ namespace Generateur_de_mo_de_passe // Note: actual namespace depends on the pro
     {
         static void Main(string[] args)
         {
-            //int longueurMotDePasse = Outils.DemanderNombre("Longueur du mot de passe :");
+            int longueurMotDePasse = Outils.DemanderNombre("Longueur du mot de passe :");
 
             string miniscules = "azertyuiopqsdfghjklmwxcvbn";
             string alphabet = miniscules;
-
-            int l = alphabet.Length;  
-
-            
+            string motDePasse = "";
+            int longueurAlphabet = alphabet.Length;
             Random rand = new Random();
-            int index = rand.Next(0, l);
-            Console.WriteLine(alphabet[index]);
+
+
+            for (int i = 0; i < longueurMotDePasse; i++)
+            {
+                int index = rand.Next(0, longueurAlphabet);
+                motDePasse += alphabet[index];
+
+            }
+            //Console.WriteLine(alphabet[index]);
+
+            Console.WriteLine($"Mot de passe : {motDePasse}");
 
 
         }
