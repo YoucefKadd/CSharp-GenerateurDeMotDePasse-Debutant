@@ -10,7 +10,10 @@ namespace Generateur_de_mo_de_passe // Note: actual namespace depends on the pro
             int longueurMotDePasse = Outils.DemanderNombre("Longueur du mot de passe :");
 
             string miniscules = "azertyuiopqsdfghjklmwxcvbn";
-            string alphabet = miniscules;
+            string majuscules = miniscules.ToUpper();
+            string chiffres = "0123456789";
+            string caracteresSpeciaux = "&#+-.";
+            string alphabet = miniscules + majuscules + chiffres + caracteresSpeciaux;
             string motDePasse = "";
             int longueurAlphabet = alphabet.Length;
             Random rand = new Random();
